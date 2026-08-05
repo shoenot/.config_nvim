@@ -1,7 +1,0 @@
-return {
-    "shoenot/sodabrew.nvim",
-    priority = 1000,
-    config = function()
-        vim.cmd([[colorscheme sodabrew]])
-    end,
-}
