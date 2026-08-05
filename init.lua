@@ -56,14 +56,6 @@ vim.lsp.config('qmlls', {
         ['qmlls'] = {},
     },
 })
-vim.lsp.config('rust_analyzer', {
-    settings = {
-        ['rust-analyzer'] = {
-            diagnostics = { enable = true },
-            check = { command = "check" },
-        },
-    },
-})
 vim.lsp.enable({
     "cssls",
     "tailwindcss",
@@ -75,7 +67,8 @@ vim.lsp.enable({
     "gopls",
     "bashls",
     "cmake",
-    "qmlls",
-    "rust_analyzer"
+    "qmlls"
 })
+
+vim.diagnostic.config({ update_in_insert = false })
 

@@ -21,7 +21,6 @@ return {
                 "cmake",
                 "gopls",
                 "qmlls",
-                "rust_analyzer"
             },
         })
 
