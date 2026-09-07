@@ -6,6 +6,7 @@ return {
     vim.g.rustaceanvim = {
       -- LSP configuration
       server = {
+        logfile = "/tmp/rust-analyzer.log",
         cmd = function()
           return { "rustup", "run", "nightly", "rust-analyzer" }
         end,
