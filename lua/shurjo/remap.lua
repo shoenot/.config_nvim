@@ -5,6 +5,8 @@ local function map(mode, lhs, rhs)
 end
 
 map("n", "<leader>pv", "<CMD>Neotree position=current<CR>")
+map("n", "<leader>q", "<CMD>nohlsearch<CR>")
+map("n", "<leader>w", "<CMD>w<CR>")
 
 -- tabs
 map("n", "<leader>h", vim.cmd.tabprevious)
@@ -26,7 +28,14 @@ map("n", "<leader>r", "<CMD>Neotree focus<CR>")
 
 -- lsp 
 map("n", "<leader>y", vim.diagnostic.open_float)
-
+map("n", "<leader>ri", function()
+  vim.lsp.buf.code_action({
+    apply = true,
+    filter = function(action)
+      return action.title == "Remove all the unused imports"
+    end,
+  })
+end, { desc = "Rust: Remove ONLY unused imports" })
 -- csv
 map("n", "<leader>vv", "<CMD>CsvViewToggle display_mode=border header_lnum=1<CR>")
 
