@@ -30,7 +30,14 @@ map("n", "<leader>r", "<CMD>Neotree focus<CR>")
 -- lsp 
 map("n", "<leader>y", vim.diagnostic.open_float)
 map("n", "<leader>gt", vim.lsp.buf.definition)
-
+map("n", "<leader>ri", function()
+  vim.lsp.buf.code_action({
+    apply = true,
+    filter = function(action)
+      return action.title == "Remove all the unused imports"
+    end,
+  })
+end, { desc = "Rust: Remove ONLY unused imports" })
 -- csv
 map("n", "<leader>vv", "<CMD>CsvViewToggle display_mode=border header_lnum=1<CR>")
 

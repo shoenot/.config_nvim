@@ -14,7 +14,6 @@ return {
         -- Clear default rules to allow for explicit definition
         autopairs.clear_rules()
 
-        -- Define pairs explicitly here.
         -- To disable one, simply comment out or delete its line.
         local rules = {
             Rule("{", "}"):with_pair(cond.not_after_regex("[^%s]")),
